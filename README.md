@@ -1,4 +1,4 @@
-This repo maintains configuration to benchmark various GraphQL ORMs/backends ([hasura](https://hasura.io/graphql), [postgraphile](https://www.graphile.org/postgraphile), [prisma](https://prisma.io)). The database used is a [Postgres variant](https://github.com/xivSolutions/ChinookDb_Pg_Modified/tree/pg_names) of [Chinook](https://github.com/lerocha/chinook-database). The benchmarking tool used is [graphql-bench](https://github.com/hasura/graphql-bench).
+This repo maintains configuration to benchmark various GraphQL ORMs/backends ([hasura](https://hasura.io/graphql), [postgraphile](https://www.graphile.org/postgraphile)). The database used is a [Postgres variant](https://github.com/xivSolutions/ChinookDb_Pg_Modified/tree/pg_names) of [Chinook](https://github.com/lerocha/chinook-database). The benchmarking tool used is [graphql-bench](https://github.com/hasura/graphql-bench).
 
 ## Running benchmarks
 
@@ -12,11 +12,10 @@ You'll need to have `docker` and `curl` to run these benchmarks
 2. Setup the graphql servers that you are interested in.
    ```bash
    ./hasura/manage.sh init
-   ./prisma/manage.sh mysql init
    ./postgraphile/manage.sh init
    ```
 
-3. Define the queries that you would like to benchmark in `hasura/queries.graphql`, `prisma/queries.graphql`, `postgraphile/queries.graphql`. There are few queries that already exist.
+3. Define the queries that you would like to benchmark in `hasura/queries.graphql` and `postgraphile/queries.graphql`. There are few queries that already exist.
 
 4. Define a benchmark (checkout sample.bench.yaml) say bench.yaml.
 
@@ -33,7 +32,6 @@ You'll need to have `docker` and `curl` to run these benchmarks
 6. Tear down the setup
    ```bash
    ./hasura/manage.sh nuke
-   ./prisma/manage.sh mysql nuke
    ./postgraphile/manage.sh nuke
    ```
 

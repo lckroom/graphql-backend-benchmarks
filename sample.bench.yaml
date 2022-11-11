@@ -48,6 +48,4 @@
 #  candidates:
 #  - <<: *hasura
 #  - <<: *postgraphile
-#  # - <<: *prisma-mysql
-#  # - <<: *prisma-pg
 #  rps: *rps_200_5000
